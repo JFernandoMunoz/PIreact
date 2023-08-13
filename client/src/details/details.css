@@ -1,0 +1,79 @@
+
+.detail-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    background-color: #1514149a;
+    color: white;
+    border: 1px solid white; /* Bordeado blanco */
+    border-radius: 10px; /* Bordes semicurvos */
+    max-width: 800px; /* Ancho máximo para ajustar contenido */
+    margin: 0 auto; /* Centrar en la página */
+    box-sizing: border-box;
+    gap: 20px;
+    height: 100vh;
+    overflow: hidden; /* Evitar que el contenido sobresalga */
+  }
+  
+  /* Estilos para los detalles de la receta */
+  .recipe-details {
+    max-width: 100%; /* Ajustar al ancho del contenedor */
+    padding: 20px; /* Agregar espacio alrededor del contenido */
+    box-sizing: border-box;
+    overflow: auto; /* Agregar scroll interno si es necesario */
+  }
+  
+  /* Estilos para el título de la receta */
+  .recipe-title {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para la imagen de la receta */
+  .recipe-image {
+    width: 90%; /* Ajuste de tamaño de imagen */
+    max-height: 380px; /* Ajuste de tamaño de imagen */
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para el resumen de la receta */
+  .recipe-summary {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para la puntuación de salud de la receta */
+  .recipe-health-score {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para las instrucciones de la receta */
+  .recipe-instructions {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  /* Estilos para el botón de volver */
+  .back-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    border: 1px solid black; /* Borde blanco */
+    border-radius: 5px; /* Bordes curvos */
+    padding: 5px 10px;
+    transition: background-color 0.3s ease; /* Transición de color de fondo */
+  }
+  
+  .back-button:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Cambio de color de fondo al pasar el mouse */
+  }
+  

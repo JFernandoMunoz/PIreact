@@ -1,0 +1,36 @@
+.landing-page {
+    width: 50%; /* Ancho del cuadrado */
+  margin: 0 auto; /* Centrar horizontalmente */
+  position: absolute; /* Posicionamiento absoluto */
+  top: 50%; /* Centrar verticalmente */
+  left: 50%; /* Centrar a la mitad del ancho */
+  transform: translate(-50%, -50%); /* Ajustar centrado */
+    background-color: transparent;
+    /* Otros estilos */
+  }
+
+.title{
+    background-color: #6ee7b7;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+  
+.button {
+    background-color: #6ee7b7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .button:hover {
+    background-color: #5ac39a;
+  }
+  
