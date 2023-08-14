@@ -1,69 +1,51 @@
 /* Estilos para la página principal */
 .home-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  text-align: center;
-  background-color: #1514149a;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    background-color: #1514149a   ;
+  }
+  
+  /* Estilos para el título */
+  .home-title {
+    font-size: 34px;
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  /* Estilos para el contenedor del buscador */
+  .search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 100%;
 
-/* Estilos para la barra de navegación */
-.navigation-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #1514149a;
-  padding: 10px 20px;
-  width: 100%;
-}
-
-/* Estilos para el botón de crear receta */
-.create-button {
-  padding: 10px 20px;
-  border: 2px solid white;
-  color: white;
-  text-decoration: none;
-  transition: background-color 0.3s, color 0.3s;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.create-button:hover {
-  background-color: white;
-  color: #1514149a;
-}
-
-/* Estilos para el contenedor del buscador */
-.search-container {
-  display: flex;
-  align-items: center;
-}
-
-/* Estilos para el buscador */
-.search-bar {
-  padding: 10px 20px;
-  border: 2px solid white;
-  color: white;
-  text-decoration: none;
-  transition: background-color 0.3s, color 0.3s;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-right: 10px; /* Añadido para separar el buscador del botón */
-}
-
-.search-bar:hover {
-  background-color: white;
-  color: #1514149a;
-}
-
-/* Estilos para las tarjetas de recetas */
-.recipe-cards {
-  display: grid;
+    background-color: transparent;
+  }
+  
+  /* Estilos para el contenedor de las tarjetas de recetas */
+  .recipe-cards {
+    display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-  max-width: 1200px;
-  margin-top: 20px;
-  background-color: #A1CCD1;
-}
+  gap: 20px; 
+  max-width: 1200px; 
 
+    margin-top: 20px;;
+    background-color: #A1CCD1;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    
+  }
+
+  .create-button{
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    border: 1px solid white; /* Borde blanco */
+    border-radius: 5px; /* Bordes curvos */
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+  }
+  

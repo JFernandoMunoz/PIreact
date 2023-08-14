@@ -27,7 +27,7 @@ const getRecipesByName = async (name) => {
     const encodedName = encodeURIComponent(name);
   
     const response = await axios.get(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&query=${encodedName}`
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100&query=${encodedName}`
     );
     return response.data.results;
   };
@@ -129,6 +129,7 @@ router.get('/recipes/name', async (req, res) => {
         title,
         image,
         diets,
+        healthScore,
       } = recipe;
 
       return {
@@ -136,6 +137,7 @@ router.get('/recipes/name', async (req, res) => {
         title,
         image,
         diets,
+        healthScore
       };
     });
 

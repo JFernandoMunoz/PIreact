@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   /* Establece la imagen de fondo */
-  background-image: url("./img/landingimage.png");
+  background-image: url("./img/imageindex.jpg");
   background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
   background-position: center; /* Centra la imagen en el contenedor */
 
