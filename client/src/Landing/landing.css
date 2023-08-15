@@ -5,19 +5,26 @@
   top: 50%; /* Centrar verticalmente */
   left: 50%; /* Centrar a la mitad del ancho */
   transform: translate(-50%, -50%); /* Ajustar centrado */
-    background-color: transparent;
-    /* Otros estilos */
+  background-color: #1514149a;
+  color: white;
+  border: 1px solid white; /* Borde blanco */
+  border-radius: 10px; /* Bordes semicurvos */
   }
 
 .title{
-    background-color: #6ee7b7;
-    padding: 10px;
-    border-radius: 5px;
-    color: white;
+  background-color: #6ee7b7;
+  color: white;
+  
+  
+  padding: 10px;
     text-align: center;
     font-size: 28px;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.parrafo{
+  font-size: 220%;
 }
   
 .button {
@@ -25,12 +32,23 @@
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 15px 25px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
+    margin-left: 78%;
   }
   
   .button:hover {
     background-color: #5ac39a;
   }
   
+  .gitbutton{
+    background-color: #6ee7b7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin-right: 10px;
+  }

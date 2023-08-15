@@ -67,16 +67,16 @@ const Home = () => {
 
   return (
     <div className="home-page">
-      <h1 className="home-title">Home Page</h1>
+      <h1 className="home-title">FOOD</h1>
       <div className="search-container">
         <SearchBar onSearch={handleSearch} />
         <button onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}>
           {sortOrder === 'asc' ? 'Sort Z-A' : 'Sort A-Z'}
         </button>
-        <button onClick={() => handleFilterHealthScore('greater')}>Saludable</button>
-        <button onClick={() => handleFilterHealthScore('lesser')}>No saludable</button>
+        <button onClick={() => handleFilterHealthScore('greater')}>Healthy</button>
+        <button onClick={() => handleFilterHealthScore('lesser')}>Not Healthy</button>
         <button onClick={() => handleFilterSource('api')}>API</button>
-        <button onClick={() => handleFilterSource('database')}>Base de datos</button>
+        <button onClick={() => handleFilterSource('database')}>Database</button>
         <Link to="/create" className="create-button">Create Recipe</Link>
       </div>
       <div className="recipe-cards">

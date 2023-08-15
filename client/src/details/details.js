@@ -21,7 +21,7 @@ const DetailPage = ({ match }) => {
 
   return (
     <div className="detail-page">
-        <Link to="/home" className="back-button">Volver</Link>
+        <Link to="/home" className="back-button">Back</Link>
       {recipe ? (
             <div className="recipe-details">
             <h2>{recipe.title}</h2>

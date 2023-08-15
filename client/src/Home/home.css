@@ -39,6 +39,7 @@
     
   }
 
+
   .create-button{
     color: white;
     text-decoration: none;
@@ -47,5 +48,23 @@
     border-radius: 5px; /* Bordes curvos */
     padding: 5px 10px;
     transition: background-color 0.3s ease;
+    background-color: rgba(0, 128, 0, 0.578);
+  }
+
+
+  button {
+    color: white;
+    background-color: transparent;
+    font-size: 12px;
+    border: 1px solid white; /* Borde blanco */
+    border-radius: 5px; /* Bordes curvos */
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+    margin-right: 1%;
+    text-align: center;
+  }
+
+  button:hover{
+    background-color: #5ac39a;
   }
   

@@ -64,16 +64,18 @@
     position: absolute;
     top: 20px;
     right: 20px;
-    color: black;
-    text-decoration: none;
-    font-size: 16px;
-    border: 1px solid black; /* Borde blanco */
+    color: white;
+    background-color: lightgreen;
+    font-size: 18px;
+    border: 1px solid white; /* Borde blanco */
     border-radius: 5px; /* Bordes curvos */
     padding: 5px 10px;
+    transition: background-color 0.3s ease;
     transition: background-color 0.3s ease; /* Transición de color de fondo */
+    text-decoration: none;
   }
   
   .back-button:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Cambio de color de fondo al pasar el mouse */
+    background-color: #5ac39a;
   }
   
