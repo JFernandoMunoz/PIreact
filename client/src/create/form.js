@@ -99,6 +99,10 @@ const FormPage = () => {
       newErrors.healthScore = 'Health Score must be a number between 0 and 100';
     }
 
+    if (formData.steps.trim() === '') {
+      newErrors.steps = 'Steps is required';
+    }
+
     setErrors(newErrors);
 
     return Object.keys(newErrors).length > 0;
