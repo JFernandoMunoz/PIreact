@@ -8,6 +8,7 @@
     color: white;
     border: 1px solid white; /* Borde blanco */
     border-radius: 10px; /* Bordes semicurvos */
+    height: 100%;
   }
   
   h2 {
