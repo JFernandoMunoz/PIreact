@@ -1,4 +1,4 @@
-const { Router } = require('express');
+const { Router, application } = require('express');
 const { Recipe, Diets } = require('../db')
 require('dotenv').config();
 const { API_KEY } = process.env;
@@ -20,6 +20,12 @@ const getRecipeByid = async (id)=>{
     return recipe.data
 }
 
+const getAllRecipes = async (id)=>{
+ 
+  const recipe = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`);
+  return recipe.data
+}
+
 const getRecipesByName = async (name) => {
     if (!name) throw new Error('No se proporcionó un nombre');
   
@@ -33,6 +39,79 @@ const getRecipesByName = async (name) => {
   };
   
 //  rutas
+router.get('/getAll', async (req, res) => {
+  try {
+   
+
+    const apiRecipes = await getAllRecipes(); // Obtener recetas de la API
+    const dbRecipes = await Recipe.findAll({
+      include: [
+        {
+          model: Diets,
+          attributes: ['Nombre'], // Incluir solo el nombre de las dietas
+          through: {
+            attributes: [] // No incluir atributos de la tabla intermedia
+          }
+        }
+      ],
+    });
+
+   
+   
+
+    const simplifiedApiRecipes = apiRecipes.results.map(({ id, title, image, diets, healthScore }) => {
+
+      return {
+        id,
+        title,
+        image,
+        diets,
+        healthScore
+      };
+    });
+
+    const simplifiedDbRecipes = dbRecipes.map((recipe) => {
+      const {
+        ID: id,
+        Nombre: title,
+        Imagen: image,
+        ResumenDelPlato: summary,
+        NivelDeComidaSaludable: healthScore,
+        PasoAPaso: instructions,
+        diets,
+      } = recipe;
+    
+      const simplifiedDiets = diets.map(diet => diet.Nombre);
+    
+      return {
+        id, // Usamos el ID real de la receta en la base de datos
+        title,
+        image,
+        summary,
+        healthScore,
+        instructions,
+        diets: simplifiedDiets,
+      };
+    });
+    
+    
+    
+
+    const combinedRecipes = [...simplifiedApiRecipes, ...simplifiedDbRecipes];
+
+    if (combinedRecipes.length > 0) {
+      return res.status(200).json(combinedRecipes);
+    } else {
+      return res.status(404).json({ message: "No se encontraron recetas con ese nombre" });
+    }
+  } catch (e) {
+    console.log(e);
+    return res.status(500).json({ message: "Error al buscar todas las recetas en home" });
+  }
+});
+
+//
+
 router.get("/recipe/:idRecipe", async (req, res) => {
   try {
     const { idRecipe } = req.params;
@@ -74,7 +153,7 @@ router.get("/recipe/:idRecipe", async (req, res) => {
       if (dbRecipe) {
         // Construir un objeto con los detalles de la receta de la base de datos
         const simplifiedDbRecipe = {
-          id: dbRecipe.ID,
+            id: dbRecipe.ID,
           title: dbRecipe.Nombre,
           image: dbRecipe.Imagen,
           summary: dbRecipe.ResumenDelPlato,
